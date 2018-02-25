@@ -1,0 +1,56 @@
+.footer {
+  grid-row: 3 / 4;
+  justify-self: stretch;
+  align-self: stretch;
+
+  display: grid;
+  grid-template-columns: auto 1200px auto;
+
+  background: linear-gradient(#fff7ff, #c7cbca);
+
+  .footer-info {
+    grid-column: 2 / 3;
+    justify-self: stretch;
+    align-self: stretch;
+
+    display: grid;
+    grid-template-columns: 250px 700px 250px;
+
+    .footer-navigation {
+      grid-column: 2 / 3;
+      justify-self: stretch;
+      align-self: stretch;
+
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      justify-content: space-around;
+      grid-template-columns: 350px 350px;
+      grid-auto-flow: column;
+
+      .button-area {
+        button {
+          cursor: pointer;
+          padding: 5px 30px 5px 30px;
+          border: 0;
+          border-radius: 25px;
+          background: #485e73;
+          color: #fff7ff;
+          outline-style: none;
+          font-size: 16pt;
+          font-family: "Noto Sans CJK TC Light", serif;
+        }
+      }
+    }
+
+    .site-info {
+      grid-column: 3 / 4;
+      justify-self: stretch;
+      align-self: stretch;
+
+      display: grid;
+      justify-items: center;
+      align-items: center;
+    }
+  }
+}

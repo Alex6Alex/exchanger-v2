@@ -1,0 +1,362 @@
+.home-page {
+  grid-column: 2 / 3;
+  justify-self: stretch;
+  align-self: stretch;
+
+  display: grid;
+  grid-template-rows: 700px auto;
+
+  .exchange {
+    grid-row: 1 / 2;
+    justify-content: space-between;
+    align-self: stretch;
+
+    display: grid;
+    grid-template-columns: 850px 240px;
+
+    .exchange-form {
+      grid-column: 1 / 2;
+      justify-self: stretch;
+      align-self: start;
+
+      display: grid;
+      grid-template-rows: 50px 650px;
+
+      .exchange-form-header {
+        display: grid;
+        justify-self: stretch;
+        align-self: stretch;
+        justify-items: center;
+        align-items: center;
+
+        h1 {
+          margin: 0 auto;
+        }
+      }
+
+      .exchange-form-main {
+        justify-self: stretch;
+        align-self: start;
+        justify-items: stretch;
+        align-items: center;
+        justify-content: space-between;
+
+        display: grid;
+        grid-template-rows: 300px 250px 50px;
+        grid-template-columns: 410px 410px;
+        grid-row-gap: 10px;
+
+        .exchange-panel {
+          display: grid;
+          grid-template-rows: 100px 65px 65px;
+          grid-row-gap: 15px;
+
+          position: relative;
+
+          .choose-currency-list {
+            width: 410px;
+            height: auto;
+            background: #e5e5e5;
+            position: absolute;
+
+            top: 160px;
+            padding: 5px 0 10px 0;
+
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+
+            display: grid;
+            grid-auto-flow: row;
+            grid-row-gap: 5px;
+            justify-items: center;
+            align-items: center;
+
+            .choose-currency-list-item {
+              width: 380px;
+              height: 30px;
+
+              display: grid;
+              grid-template-columns: 40px 330px;
+              grid-auto-flow: column;
+
+              justify-content: center;
+              justify-items: center;
+              align-items: center;
+
+              &:hover {
+                background: #dddddd;
+                cursor: pointer;
+              }
+
+              .item-name {
+                justify-self: start;
+                margin: 0;
+              }
+
+              .item-logo {
+                width: 24px;
+                height: 24px;
+                background-image: url('../images/bitcoin.png');
+                background-repeat: no-repeat;
+                background-size: contain;
+              }
+            }
+          }
+
+          .exchange-panel-header {
+            grid-row: 1 / 2;
+
+            display: grid;
+            justify-self: stretch;
+            align-self: center;
+
+            .first-header {
+              font-size: 25pt;
+              margin: 0;
+            }
+
+            .choose-currency {
+              font-size: 12pt;
+              font-style: italic;
+              color: #3E3E3E;
+            }
+          }
+
+          .exchange-panel-name {
+            grid-row: 2 / 3;
+
+            display: grid;
+
+            .exchange-panel-name-select {
+              justify-self: stretch;
+              align-self: center;
+
+              display: grid;
+              grid-template-columns: 40px auto 40px;
+              grid-column-gap: 5px;
+              justify-items: center;
+              align-items: center;
+
+              border-bottom: #c7cbca 2px solid;
+              cursor: pointer;
+              height: 40px;
+
+              &:hover {
+                background: #e5e5e5;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+              }
+
+              .selected-icon {
+                width: 30px;
+                height: 30px;
+                background-image: url('../images/bitcoin.png');
+                background-repeat: no-repeat;
+                background-size: contain;
+              }
+
+              .selected-name {
+                font-size: 18pt;
+                margin: 0;
+                width: 100%;
+              }
+            }
+
+            span {
+              font-size: 10pt;
+              color: #3E3E3E;
+              font-style: italic;
+            }
+          }
+
+          .exchange-panel-count {
+            grid-row: 3 / 4;
+
+            display: grid;
+
+            .exchange-panel-count-input {
+              justify-self: stretch;
+              align-self: center;
+
+              display: grid;
+              grid-template-columns: auto 40px;
+              grid-column-gap: 5px;
+              justify-items: center;
+              align-items: center;
+
+              border-bottom: #c7cbca 2px solid;
+              height: 40px;
+
+              input {
+                height: 35px;
+                font-size: 16pt;
+                color: #373533;
+                background: #fff7ff;
+                font-family: "Noto Sans CJK TC Light", serif;
+                border: 0;
+                outline-style: none;
+                width: 100%;
+              }
+
+              .currency-code {
+                font-size: 14pt;
+                margin: 0;
+              }
+            }
+
+            span {
+              font-size: 10pt;
+              color: #3E3E3E;
+              font-style: italic;
+            }
+          }
+        }
+
+        .exchange-details {
+          grid-row: 2 / 3;
+          grid-column: 1 / 3;
+
+          display: grid;
+          grid-template-rows: 50px 50px 50px 50px;
+          grid-row-gap: 15px;
+          justify-content: stretch;
+
+          .exchange-course {
+            margin: 0 auto;
+
+            h2 {
+              margin: 0 auto;
+            }
+          }
+
+          .from-pocket, .to-pocket, .email {
+            display: grid;
+            grid-auto-flow: column;
+            justify-self: stretch;
+            justify-content: space-around;
+            align-items: center;
+            grid-template-columns: 20% 80%;
+
+            h2 {
+              margin: 0;
+            }
+
+            .text-holder {
+              height: 35px;
+              border-bottom: #c7cbca 2px solid;
+
+              input {
+                height: 35px;
+                font-size: 16pt;
+                color: #373533;
+                background: #fff7ff;
+                font-family: "Noto Sans CJK TC Light", serif;
+                border: 0;
+                outline-style: none;
+                width: 100%;
+              }
+            }
+          }
+        }
+
+        .exchange-end {
+          grid-row: 3 / 4;
+          grid-column: 1 / 3;
+          display: grid;
+          justify-items: start;
+          align-items: center;
+
+          button {
+            cursor: pointer;
+            padding: 5px 30px 5px 30px;
+            border: 0;
+            border-radius: 5px;
+            background: #abafae;
+            color: #fff7ff;
+            outline-style: none;
+            font-size: 16pt;
+            font-family: "Noto Sans CJK TC Light", serif;
+          }
+        }
+      }
+    }
+
+    .reserves-info {
+      grid-column: 2 / 3;
+      justify-self: stretch;
+      align-self: stretch;
+
+      .currencies {
+        display: grid;
+        grid-row-gap: 5px;
+
+        .currency {
+          grid-auto-flow: row;
+
+          display: grid;
+          grid-template-columns: 30px auto 80px;
+
+          justify-self: stretch;
+          align-self: center;
+          justify-items: center;
+          align-items: center;
+
+          .currency-logo {
+            width: 24px;
+            height: 24px;
+            background-image: url('../images/bitcoin.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+          }
+
+          .currency-name {
+            display: grid;
+            justify-self: stretch;
+          }
+
+          .currency-reserve {
+            display: grid;
+            justify-self: end;
+          }
+        }
+      }
+    }
+  }
+
+  .about {
+    grid-row: 2 / 3;
+    align-self: start;
+    justify-self: stretch;
+
+    display: grid;
+    grid-template-rows: 50px 150px;
+    grid-row-gap: 15px;
+    justify-items: stretch;
+
+    //background: linear-gradient(-360deg, #c7cbca 10%, #fff7ff 90%);
+
+    .about-title {
+      display: grid;
+      justify-items: center;
+      align-items: center;
+
+      h1 {
+        margin: 0;
+      }
+    }
+
+    .about-block {
+      grid-row: 2 / 3;
+      justify-self: stretch;
+
+      display: grid;
+      align-items: center;
+      align-content: space-around;
+
+      p {
+        margin: 0;
+        text-align: center;
+      }
+    }
+  }
+}
