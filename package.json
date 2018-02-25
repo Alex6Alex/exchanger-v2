@@ -1,6 +1,9 @@
 {
   "name": "Exchanger",
   "version": "1.0.0",
+  "engines": {
+    "node": "8.9.3"
+  },
   "description": "App for exchanging currency",
   "main": "server.js",
   "scripts": {
