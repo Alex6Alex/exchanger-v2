@@ -4,6 +4,7 @@
   align-self: stretch;
 
   display: grid;
+  align-content: start;
   grid-template-rows: 700px auto;
 
   .exchange {

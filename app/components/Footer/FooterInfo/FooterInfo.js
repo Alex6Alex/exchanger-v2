@@ -10,7 +10,7 @@ export default class FooterInfo extends React.Component {
         <Logo/>
         <div className='footer-navigation'>
           <ButtonArea className='make-review' title='Оставить отзыв'/>
-          <ButtonArea className='question' title='Задать вопрос'/>
+          <ButtonArea className='question' title='Задать вопрос' link='/contacts'/>
         </div>
         <div className='site-info'>
           <span>© 2018, example.com</span>

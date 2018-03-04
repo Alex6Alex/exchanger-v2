@@ -9,7 +9,7 @@ export default class Navigation extends React.Component {
       { name: 'ГЛАВНАЯ',  link: '/' },
       { name: 'РЕЗЕРВЫ',  link: '/' },
       { name: 'ОТЗЫВЫ',   link: '/' },
-      { name: 'КОНТАКТЫ', link: '/' }
+      { name: 'КОНТАКТЫ', link: '/contacts' }
     ];
   }
 
