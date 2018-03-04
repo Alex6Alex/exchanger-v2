@@ -8,7 +8,7 @@ export default class Navigation extends React.Component {
     this.menuItemNames = [
       { name: 'ГЛАВНАЯ',  link: '/' },
       { name: 'РЕЗЕРВЫ',  link: '/' },
-      { name: 'ОТЗЫВЫ',   link: '/' },
+      { name: 'ОТЗЫВЫ',   link: '/reviews' },
       { name: 'КОНТАКТЫ', link: '/contacts' }
     ];
   }

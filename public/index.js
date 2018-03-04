@@ -9,6 +9,7 @@ export default class Index extends React.Component {
 				<head>
 					<meta charSet='utf-8'/>
           <script defer src='https://use.fontawesome.com/releases/v5.0.6/js/all.js'></script>
+					<script src='https://www.google.com/recaptcha/api.js'></script>
 					<title>
 						Обменник
 					</title>

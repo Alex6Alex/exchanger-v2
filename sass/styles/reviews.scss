@@ -1,0 +1,163 @@
+.reviews {
+  grid-column: 2 / 3;
+  justify-self: stretch;
+  align-self: stretch;
+
+  display: grid;
+  align-content: start;
+  grid-template-rows: 100px auto;
+  grid-row-gap: 20px;
+
+  .reviews-header {
+    grid-row: 1 / 2;
+
+    display: grid;
+    grid-template-rows: 50px 50px;
+    justify-items: stretch;
+    align-items: start;
+
+    .reviews-header-title, .reviews-header-description {
+      display: grid;
+      justify-items: center;
+      align-items: center;
+
+      h1, p {
+        margin: 0;
+      }
+    }
+  }
+
+  .reviews-body {
+    grid-row: 2 / 3;
+
+    display: grid;
+    grid-template-columns: 780px 300px;
+    justify-content: space-between;
+
+    .user-reviews {
+      grid-column: 1 / 2;
+
+      display: grid;
+      grid-template-rows: 50px auto;
+      justify-self: stretch;
+      align-self: start;
+      justify-content: stretch;
+      align-content: stretch;
+
+      .user-reviews-title {
+        display: grid;
+        justify-items: center;
+        align-items: center;
+
+        h2 {
+          margin: 0;
+        }
+      }
+
+      .user-reviews-list {
+        display: grid;
+        grid-auto-flow: row;
+        grid-row-gap: 15px;
+
+        .user-review {
+          border-bottom: #c7cbca 2px solid;
+          padding-bottom: 10px;
+
+          .review-title {
+            margin: 0 0 10px 0;
+          }
+          .review-text {
+            margin: 0;
+            text-align: justify;
+          }
+        }
+      }
+    }
+
+    .your-review {
+      grid-column: 2 / 3;
+
+      display: grid;
+      grid-template-rows: 50px auto;
+      justify-self: stretch;
+      align-self: start;
+      justify-content: stretch;
+      align-content: stretch;
+
+      .your-review-title {
+        display: grid;
+        justify-items: center;
+        align-items: center;
+
+        h2 {
+          margin: 0;
+        }
+      }
+
+      .your-review-info {
+        display: grid;
+        grid-template-rows: auto auto auto;
+        grid-row-gap: 10px;
+
+        .your-name {
+          p {
+            margin: 0;
+          }
+
+          input {
+            height: 35px;
+            font-size: 12pt;
+            border: 0;
+            border-bottom: #c7cbca 2px solid;
+            color: #373533;
+            background: #fff7ff;
+            font-family: "Noto Sans CJK TC Light", serif;
+            outline-style: none;
+            width: 300px;
+          }
+        }
+
+        .your-text {
+          p {
+            margin: 0;
+          }
+
+          textarea {
+            height: 80px;
+            font-size: 12pt;
+            border: 0;
+            border-bottom: #c7cbca 2px solid;
+            color: #373533;
+            background: #fff7ff;
+            font-family: "Noto Sans CJK TC Light", serif;
+            outline-style: none;
+            width: 300px;
+            max-width: 300px;
+          }
+        }
+
+        .g-recaptcha {
+          transform:scale(0.95);
+        }
+
+        .send-review {
+          display: grid;
+          justify-items: center;
+          align-items: center;
+
+          button {
+            cursor: pointer;
+            padding: 5px 30px 5px 30px;
+            border: 0;
+            border-radius: 5px;
+            background: #abafae;
+            color: #fff7ff;
+            outline-style: none;
+            font-size: 16pt;
+            font-family: "Noto Sans CJK TC Light", serif;
+          }
+        }
+      }
+    }
+  }
+}
