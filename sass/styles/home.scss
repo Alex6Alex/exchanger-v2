@@ -95,11 +95,28 @@
               }
 
               .item-logo {
-                width: 24px;
-                height: 24px;
-                background-image: url('../images/bitcoin.png');
-                background-repeat: no-repeat;
-                background-size: contain;
+                width: 30px;
+                height: 30px;
+
+                &.bitcoin {
+                  background: url('../images/currencies_sprite.png');
+                  background-position: -36px -33px;
+                }
+
+                &.litecoin {
+                  background: url('../images/currencies_sprite.png');
+                  background-position: -3px -0px;
+                }
+
+                &.qiwi {
+                  background: url('../images/currencies_sprite.png');
+                  background-position: -36px -0px;
+                }
+
+                &.ripple {
+                  background: url('../images/currencies_sprite.png');
+                  background-position: -3px -33px;
+                }
               }
             }
           }
@@ -151,9 +168,26 @@
               .selected-icon {
                 width: 30px;
                 height: 30px;
-                background-image: url('../images/bitcoin.png');
-                background-repeat: no-repeat;
-                background-size: contain;
+
+                &.bitcoin {
+                  background: url('../images/currencies_sprite.png');
+                  background-position: -36px -33px;
+                }
+
+                &.litecoin {
+                  background: url('../images/currencies_sprite.png');
+                  background-position: -3px -0px;
+                }
+
+                &.qiwi {
+                  background: url('../images/currencies_sprite.png');
+                  background-position: -36px -0px;
+                }
+
+                &.ripple {
+                  background: url('../images/currencies_sprite.png');
+                  background-position: -3px -33px;
+                }
               }
 
               .selected-name {

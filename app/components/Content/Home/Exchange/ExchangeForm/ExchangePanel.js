@@ -9,8 +9,17 @@ export default class ExchangePanel extends React.Component {
     this.state = {
       visibleCurrencyList: false,
       currency: this.props.currency,
-      code: this.props.code
+      code: this.props.code,
+      iconClass: 'default'
     };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      currency: nextProps.currency,
+      code: nextProps.code,
+      iconClass: 'selected-icon ' + nextProps.currency
+    })
   }
 
   openCurrencyList() {
@@ -18,7 +27,6 @@ export default class ExchangePanel extends React.Component {
   }
 
   updateCurrency(currency) {
-    this.setState({currency: currency});
     this.props.updateTitle(currency, this.props.type);
     this.setState({visibleCurrencyList: false});
   }
@@ -26,7 +34,8 @@ export default class ExchangePanel extends React.Component {
   render() {
     return(
       <div className='exchange-panel'>
-        <ChooseCurrency visible={this.state.visibleCurrencyList} getCurrency={this.updateCurrency.bind(this)}/>
+        <ChooseCurrency currencyList={this.props.currencyList} visible={this.state.visibleCurrencyList}
+          getCurrency={this.updateCurrency.bind(this)}/>
         {this.props.type == 'exchange-from' ? (
           <div className='exchange-panel-header'>
             <p className='first-header'>Вы отдаете</p>
@@ -40,7 +49,7 @@ export default class ExchangePanel extends React.Component {
         )}
         <div className='exchange-panel-name'>
           <div className='exchange-panel-name-select' onClick={this.openCurrencyList.bind(this)}>
-            <div className='selected-icon'></div>
+            <div className={this.state.iconClass}></div>
             <p className='selected-name'>{this.state.currency}</p>
             <span className='fas fa-chevron-down'></span>
           </div>
