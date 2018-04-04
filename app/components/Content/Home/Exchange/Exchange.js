@@ -8,24 +8,43 @@ export default class Exchange extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currencyList: []
+      currencyList: [],
+      currencyReserves: []
     }
   }
 
   componentDidMount() {
-    axios.get('https://exchanger-api.herokuapp.com/currencies/currency_list')
-      .then(results => {
+    let options = [
+      {
+        baseURL: 'http://localhost:3000',
+        url: '/api/currencies/currency_list',
+        method: 'get'
+      },
+      {
+        baseURL: 'http://localhost:3000',
+        url: '/api/currencies/currency_reserves',
+        method: 'get'
+      }
+    ];
+
+    axios.all([
+      axios.request(options[0]),
+      axios.request(options[1])
+    ]).then(
+      axios.spread((currencyList, currencyReserves) => {
         this.setState({
-          currencyList: results.data
-        })
-      });
+          currencyList: currencyList.data,
+          currencyReserves: currencyReserves.data
+        });
+      })
+    )
   }
 
   render() {
     return(
       <div className='exchange'>
         <ExchangeForm currencyList={this.state.currencyList}/>
-        <ReservesInfo currencyList={this.state.currencyList}/>
+        <ReservesInfo currencyReserves={this.state.currencyReserves}/>
       </div>
     )
   }

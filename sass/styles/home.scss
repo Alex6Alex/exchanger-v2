@@ -339,9 +339,26 @@
           .currency-logo {
             width: 24px;
             height: 24px;
-            background-image: url('../images/bitcoin.png');
-            background-repeat: no-repeat;
-            background-size: contain;
+
+            &.bitcoin {
+              background: url('../images/sprite24.png');
+              background-position: -3px -0px;
+            }
+
+            &.litecoin {
+              background: url('../images/sprite24.png');
+              background-position: -3px -27px;
+            }
+
+            &.qiwi {
+              background: url('../images/sprite24.png');
+              background-position: -30px -27px;
+            }
+
+            &.ripple {
+              background: url('../images/sprite24.png');
+              background-position: -30px -0px;
+            }
           }
 
           .currency-name {

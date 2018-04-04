@@ -1,6 +1,19 @@
 import React from 'react'
+// import axios from 'axios'
 
 export default class NewReview extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+
+    }
+  }
+
+  addReview() {
+
+  }
+
   render() {
     return(
       <div className='your-review'>
