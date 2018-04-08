@@ -10,6 +10,8 @@ export default class ExchangePanel extends React.Component {
       visibleCurrencyList: false,
       currency: this.props.currency,
       code: this.props.code,
+      value: this.props.value,
+      course: this.props.course,
       iconClass: 'default'
     };
 
@@ -20,8 +22,10 @@ export default class ExchangePanel extends React.Component {
     this.setState({
       currency: nextProps.currency,
       code: nextProps.code,
-      iconClass: 'selected-icon ' + nextProps.currency
-    })
+      iconClass: 'selected-icon ' + nextProps.currency,
+      value: nextProps.value,
+      course: nextProps.course
+    });
   }
 
   openCurrencyList() {
@@ -34,8 +38,18 @@ export default class ExchangePanel extends React.Component {
   }
 
   handleChange(event) {
-    this.props.valueChange(event.target.value, this.props.type);
-    event.preventDefault();
+      this.props.valueChange(event.target.value, this.props.type);
+      event.preventDefault();
+  }
+
+  setValue() {
+    let value = this.state.value;
+    let course = this.state.course;
+    if (value > 0 && course > 0) {
+      return value * course;
+    } else {
+      return ''
+    }
   }
 
   render() {
@@ -68,7 +82,11 @@ export default class ExchangePanel extends React.Component {
         </div>
         <div className='exchange-panel-count'>
           <div className='exchange-panel-count-input'>
-            <input type='text' placeholder='Введите сумму' onChange={this.handleChange}/>
+            {this.props.type == 'exchange-from' ? (
+              <input type='text' placeholder='Введите сумму' onChange={this.handleChange}/>
+            ) : (
+              <input id='ex-to' type='text' placeholder='Сумма к получению' onChange={this.handleChange} value={this.setValue()}/>
+            )}
             <p className='currency-code'>{this.state.code}</p>
           </div>
           {this.props.type == 'exchange-from' ? (

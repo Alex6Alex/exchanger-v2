@@ -14,7 +14,7 @@ export default class About extends React.Component {
             Мы готовы предложить Вам обмен небольших сумм, обеспечивая при этом сохранность всех данных.
           </p>
           <p>
-            Обменять можно Bitcoin, Ethereum, Qiwi, Яндекс Деньги, Сбербанк.
+            Обменять можно Bitcoin, Litecoin, Ripple, Qiwi.
           </p>
         </div>
       </div>

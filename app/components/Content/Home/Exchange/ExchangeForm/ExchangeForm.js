@@ -23,9 +23,7 @@ export default class ExchangeForm extends React.Component {
         sell: 0,
         buy: 0
       },
-      exchangeInfo: {
-
-      }
+      exchangeInfo: {}
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -50,7 +48,7 @@ export default class ExchangeForm extends React.Component {
   createInterval() {
     let courseUpdater = setInterval(() => {
       this.updateCourse()
-    }, 5000);
+    }, 20000);
     this.setState({ courseUpdater: courseUpdater });
   }
 
@@ -81,7 +79,8 @@ export default class ExchangeForm extends React.Component {
         this.setState({
           course: {
             sell: results.data.sell_value,
-            buy: (results.data.sell_course * results.data.sell_value).toFixed(results.data.round_value)
+            buy: (results.data.sell_course * results.data.sell_value).toFixed(results.data.round_value),
+            course: results.data.sell_course
           }
         })
       });
@@ -138,6 +137,26 @@ export default class ExchangeForm extends React.Component {
   }
 
   handleSubmit() {
+    axios.post('http://localhost:3000/api/currencies/confirm_order', {
+      params: {
+        from: this.state.sellCurrency.code,
+        from_value: this.state.exchangeInfo.from_value,
+        to: this.state.buyCurrency.code,
+        to_value: this.state.exchangeInfo.from_value * this.state.course.course,
+        from_pocket: this.state.exchangeInfo.from_pocket,
+        to_pocket: this.state.exchangeInfo.to_pocket,
+        email: this.state.exchangeInfo.email,
+      }
+    });
+    // .then(results => {
+    //   this.setState({
+    //     course: {
+    //       sell: results.data.sell_value,
+    //       buy: (results.data.sell_course * results.data.sell_value).toFixed(results.data.round_value),
+    //       course: results.data.sell_course
+    //     }
+    //   })
+    // });
     console.log(this.state.exchangeInfo);
   }
 
@@ -148,11 +167,25 @@ export default class ExchangeForm extends React.Component {
           <h1>Обмен {this.state.sellCurrency.name} на {this.state.buyCurrency.name}</h1>
         </div>
         <div className='exchange-form-main'>
-          <ExchangePanel type='exchange-from' currencyList={this.props.currencyList} currency={this.state.sellCurrency.name}
-            code={this.state.sellCurrency.code} updateTitle={this.updateTitle} valueChange={this.handleChange}/>
-          <ExchangePanel type='exchange-to' currencyList={this.props.currencyList} currency={this.state.buyCurrency.name}
-            code={this.state.buyCurrency.code} updateTitle={this.updateTitle} exchangeCourse={this.showCourse()}
-            valueChange={this.handleChange}/>
+          <ExchangePanel
+            type='exchange-from'
+            currencyList={this.props.currencyList}
+            currency={this.state.sellCurrency.name}
+            code={this.state.sellCurrency.code}
+            updateTitle={this.updateTitle}
+            valueChange={this.handleChange}
+          />
+          <ExchangePanel
+            type='exchange-to'
+            currencyList={this.props.currencyList}
+            currency={this.state.buyCurrency.name}
+            code={this.state.buyCurrency.code}
+            value={this.state.exchangeInfo.from_value}
+            course={this.state.course.course}
+            updateTitle={this.updateTitle}
+            exchangeCourse={this.showCourse()}
+            valueChange={this.handleChange}
+          />
           <div className='exchange-details'>
             <div className='exchange-course'>
               <h2>По курсу обмена {this.showCourse()}</h2>
