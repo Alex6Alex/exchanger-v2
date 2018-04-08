@@ -69,7 +69,7 @@ export default class ExchangeForm extends React.Component {
 
   updateCourse() {
     if(this.state.sellCurrency.code != '' && this.state.buyCurrency.code != '') {
-      axios.get('http://localhost:3000/api/currencies/current_course', {
+      axios.get('https://exchanger-api.herokuapp.com/api/currencies/current_course', {
         params: {
           sell_currency: this.state.sellCurrency.code,
           buy_currency: this.state.buyCurrency.code
@@ -137,7 +137,7 @@ export default class ExchangeForm extends React.Component {
   }
 
   handleSubmit() {
-    axios.post('http://localhost:3000/api/currencies/confirm_order', {
+    axios.post('https://exchanger-api.herokuapp.com/api/currencies/confirm_order', {
       params: {
         from: this.state.sellCurrency.code,
         from_value: this.state.exchangeInfo.from_value,

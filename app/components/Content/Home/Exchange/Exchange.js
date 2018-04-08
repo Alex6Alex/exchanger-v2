@@ -16,12 +16,12 @@ export default class Exchange extends React.Component {
   componentDidMount() {
     let options = [
       {
-        baseURL: 'http://localhost:3000',
+        baseURL: 'https://exchanger-api.herokuapp.com',
         url: '/api/currencies/currency_list',
         method: 'get'
       },
       {
-        baseURL: 'http://localhost:3000',
+        baseURL: 'https://exchanger-api.herokuapp.com',
         url: '/api/currencies/currency_reserves',
         method: 'get'
       }
