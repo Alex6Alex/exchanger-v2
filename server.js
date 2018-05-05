@@ -2,10 +2,10 @@ require('babel-register')({
 	presets: ['react', 'es2015', 'stage-0']
 });
 
-import express from 'express'
-import favicon from 'serve-favicon'
-import path from 'path'
-import router from './server/routes/index.js'
+const express = require('express');
+const favicon = require('serve-favicon');
+const path    = require('path');
+const router  = require('./server/routes/index.js');
 
 const sassMiddleware = require('node-sass-middleware');
 const srcPath = path.join(__dirname, 'sass');

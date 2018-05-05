@@ -7,4 +7,4 @@ const router = Router();
 
 router.get('*', staticPages.path);
 
-export default router;
+module.exports = router;
