@@ -5,7 +5,7 @@ export default class Contacts extends React.Component {
     return(
       <div className='contacts'>
         <div className='contacts-header'>
-          <h1>Служба поддержки клиентов Example.com</h1>
+          <h1>Служба поддержки клиентов bit-exchanger.co.ua</h1>
         </div>
         <div className='contacts-description'>
           <div className='contacts-description-title'>
