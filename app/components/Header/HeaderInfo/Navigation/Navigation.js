@@ -4,11 +4,10 @@ import { Link } from 'react-router-dom'
 export default class Navigation extends React.Component {
   constructor(props) {
     super(props);
-
+    // { name: 'РЕЗЕРВЫ',  link: '/' },
+    // { name: 'ОТЗЫВЫ',   link: '/reviews' },
     this.menuItemNames = [
       { name: 'ГЛАВНАЯ',  link: '/' },
-      { name: 'РЕЗЕРВЫ',  link: '/' },
-      { name: 'ОТЗЫВЫ',   link: '/reviews' },
       { name: 'КОНТАКТЫ', link: '/contacts' }
     ];
   }
