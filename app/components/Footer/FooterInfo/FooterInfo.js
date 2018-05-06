@@ -13,7 +13,7 @@ export default class FooterInfo extends React.Component {
           <ButtonArea className='question' title='Задать вопрос' link='/contacts'/>
         </div>
         <div className='site-info'>
-          <span>© 2018, examplge.com</span>
+          <span>© 2018, bit-exchanger.co.ua</span>
         </div>
       </div>
     )
