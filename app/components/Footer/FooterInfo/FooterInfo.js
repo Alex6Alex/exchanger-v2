@@ -5,11 +5,11 @@ import ButtonArea from './ButtonArea'
 
 export default class FooterInfo extends React.Component {
   render() {
+    //<ButtonArea className='make-review' title='Оставить отзыв' link='/reviews'/>
     return(
       <div className='footer-info'>
         <Logo/>
         <div className='footer-navigation'>
-          <ButtonArea className='make-review' title='Оставить отзыв' link='/reviews'/>
           <ButtonArea className='question' title='Задать вопрос' link='/contacts'/>
         </div>
         <div className='site-info'>
