@@ -90,7 +90,7 @@ export default class ExchangePanel extends React.Component {
             <p className='currency-code'>{this.state.code}</p>
           </div>
           {this.props.type == 'exchange-from' ? (
-            <span>Минимальная сумма: 100 RUR</span>
+            <span>Сумма не должна превышать кол-во валюты в резерве.</span>
           ) : (
             <span>Сумма к получению</span>
           )}
