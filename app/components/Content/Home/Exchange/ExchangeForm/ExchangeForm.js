@@ -137,27 +137,34 @@ export default class ExchangeForm extends React.Component {
   }
 
   handleSubmit() {
-    axios.post('https://exchanger-api.herokuapp.com/api/currencies/confirm_order', {
-      params: {
-        from: this.state.sellCurrency.code,
-        from_value: this.state.exchangeInfo.from_value,
-        to: this.state.buyCurrency.code,
-        to_value: this.state.exchangeInfo.from_value * this.state.course.course,
-        from_pocket: this.state.exchangeInfo.from_pocket,
-        to_pocket: this.state.exchangeInfo.to_pocket,
-        email: this.state.exchangeInfo.email,
-      }
-    });
-    // .then(results => {
-    //   this.setState({
-    //     course: {
-    //       sell: results.data.sell_value,
-    //       buy: (results.data.sell_course * results.data.sell_value).toFixed(results.data.round_value),
-    //       course: results.data.sell_course
-    //     }
-    //   })
-    // });
-    console.log(this.state.exchangeInfo);
+    let params = {
+      from: this.state.sellCurrency.code,
+      from_value: this.state.exchangeInfo.from_value,
+      to: this.state.buyCurrency.code,
+      to_value: this.state.exchangeInfo.from_value * this.state.course.course,
+      from_pocket: this.state.exchangeInfo.from_pocket,
+      to_pocket: this.state.exchangeInfo.to_pocket,
+      email: this.state.exchangeInfo.email
+    };
+
+    if (this.all_params_exists(params)) {
+      axios.post('https://exchanger-api.herokuapp.com/api/currencies/confirm_order', {
+        params: params
+      });
+      alert('Заказ был оформлен. Ожидайте письма от нашего специалиста.')
+    } else {
+      alert('Были указаны не все данные.')
+    }
+  }
+
+  all_params_exists(params) {
+    let all_params = true;
+    // let keys = Object.getOwnPropertyNames(params);
+    for(let key in params) {
+      if (!params[key])
+        all_params = false;
+    }
+    return all_params;
   }
 
   render() {
