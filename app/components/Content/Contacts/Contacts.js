@@ -10,21 +10,13 @@ export default class Contacts extends React.Component {
         <div className='contacts-description'>
           <div className='contacts-description-title'>
             <p>
-              Уважаемые пользователи, по всем вопросам, которые Вас интересуют, Вы можете обратится по следующим электронным адресам:
+              Уважаемые пользователи, по всем вопросам, которые Вас интересуют, Вы можете обратится по следующему электронному адресу:
             </p>
           </div>
           <div className='contacts-list'>
             <div className='contacts-info'>
-              <p className='contact-name'>Google почта: </p>
-              <p className='contact-address'>example@gmail.com</p>
-            </div>
-            <div className='contacts-info'>
-              <p className='contact-name'>Yandex почта: </p>
-              <p className='contact-address'>example@yandex.ru</p>
-            </div>
-            <div className='contacts-info'>
-              <p className='contact-name'>Mail почта: </p>
-              <p className='contact-address'>example@mail.ru</p>
+              <p className='contact-name'>Почта поддержки: </p>
+              <p className='contact-address'>support@bit-exchanger.co.ua</p>
             </div>
           </div>
         </div>
