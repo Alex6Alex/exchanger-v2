@@ -46,7 +46,7 @@ export default class ExchangePanel extends React.Component {
     let value = this.state.value;
     let course = this.state.course;
     if (value > 0 && course > 0) {
-      return value * course;
+      return value * course - (value * course * .15);
     } else {
       return ''
     }
@@ -92,7 +92,7 @@ export default class ExchangePanel extends React.Component {
           {this.props.type == 'exchange-from' ? (
             <span>Сумма не должна превышать кол-во валюты в резерве</span>
           ) : (
-            <span>Сумма к получению</span>
+            <span>Сумма к получению, с учетом комиссии 15%</span>
           )}
         </div>
       </div>
